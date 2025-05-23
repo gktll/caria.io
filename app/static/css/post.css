@@ -1,0 +1,93 @@
+#theme-wrapper
+ {
+  padding: 0 0;
+  height: 100%;
+}
+
+.post-content h6 { /* reuse h6 for "Introduction" wit no margin-top */
+  margin-bottom: .5rem;
+  font-weight: 700;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+}
+
+.post-content h1, h2, h3, h4, h5 {
+  margin-bottom: .5rem;
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+.post-content p {
+  margin: .5rem 0 1.5rem 0;
+  line-height: 1.6;
+  max-width: 50rem;
+}
+
+ol {
+  padding-left: 0;
+}
+
+.post-content ul {
+  margin: .5rem 0 1.5rem 0;
+  margin-left: 1rem;
+  max-width: 50rem;
+}
+
+.post-content ul li {
+  list-style-type: circle;
+}
+
+.post-content pre {
+  background: var(--code-bg);
+  color: var(--code-text);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 2rem 0;
+  max-width: 50rem;
+}
+
+.post-content code {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.875em;
+}
+
+
+/* 
+Base image styling 
+*/
+.post-image {
+  margin: 2rem 0;
+  width: 100%;
+  overflow:hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.post-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.post-image-caption {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--c-text-secondary);
+  text-align: center;
+}
+
+/* Image grid */
+.post-image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .post-image-grid {
+    grid-template-columns: 1fr;
+  }
+}

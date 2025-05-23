@@ -1,0 +1,94 @@
+{# templates/blog/index.html #}
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{# Add Phosphor Icons #}
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+{% endblock %}
+
+{% block title %}Home - My Blog{% endblock %}
+
+{% block content %}
+
+{# Hero Section #}
+<header class="flex vertical gap-xs">
+    <h1 class="txt-xbold">Explorations</h1>
+    <h4 class="txt-light">
+        Speaking yet keeping the silence
+    </h4>
+    <div class="header-cta">
+        <a class="btn btn-primary">Lean More</a>
+    </div>
+</header>
+
+<section class="filters">
+    {% if tags %}
+    <div class="flex horizontal gap-s aligncenter">
+        <p class="txt-small">Filter By Topic:</p>
+        <div class="flex horizontal gap-s wrap">
+            {% for tag in tags %}
+            <a href="{{ url_for('blog.tag_posts', tag=tag) }}" 
+               class="tag-link {% if tag == current_tag %}active{% endif %}"
+               style="color: {{ tag_colors[tag] }}; border: 1px solid {{ tag_colors[tag] }}">
+                {{ tag }}
+            </a>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+
+{# Posts List Section #}
+<section class="posts-list my-xxl">
+    {% for post in posts %}
+    <article class="post-item flex vertical gap-m py-l">
+      
+   
+        <div class="flex vertical gap-s">
+            <span class="post-meta flex horizontal gap-xs aligncenter">
+                <i class="ph ph-calendar txt-xsmall"></i>
+                <p class="txt-xsmall">{{ post.date }}</p>
+            </span>
+            <h3 class="post-title txt-medium">
+                <a href="{{ url_for('blog.post_detail', slug=post.slug) }}">{{ post.title }}</a>
+            </h3>
+        </div>
+        {% if post.tags %}
+        <div class="tag-indicators flex horizontal gap-xs wrap">
+            {% for tag in post.tags %}
+            <a href="{{ url_for('blog.tag_posts', tag=tag) }}" 
+            class="tag-dot" 
+            style="background-color: {{ tag_colors[tag] }}"
+            title="{{ tag }}"></a>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% if post.summary %}
+        <div class="post-summary">
+            <p class="summary-text">{{ post.summary }}</p>
+        </div>
+        {% endif %}
+        <a href="{{ url_for('blog.post_detail', slug=post.slug) }}" 
+            class="read-more flex horizontal gap-xs aligncenter">
+            Read More
+            <i class="ph ph-arrow-square-out" style="font-weight:700;"></i>
+        </a>
+    
+
+
+    </article>
+    {% else %}
+    <div class="no-posts">
+        <p>No posts found.</p>
+        {% if query or current_tag %}
+        <a href="{{ url_for('blog.index') }}" class="clear-filters">Clear filters</a>
+        {% endif %}
+    </div>
+    {% endfor %}
+</section>
+{% endblock %}
+
+

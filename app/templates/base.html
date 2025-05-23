@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Blog{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <style>
+      	@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Share+Tech+Mono&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+    </style>
+	{% block head %}{% endblock %}
+</head>
+<body>
+    <main class="flex vertical">
+		<nav class="theme-nav-bg">
+			<div class="nav-container flex horizontal aligncenter justbetween">
+				<button id="mobile-menu-toggle" class="mobile-only">
+					<i class="ph ph-list"></i>
+				</button>
+				<div class="nav-left flex horizontal aligncenter">
+					<div class="logo">
+						<a href="{{ url_for('blog.index') }}">caria.io</a>
+					</div>
+					<div id="menu" class="nav-links">
+						<a href="{{ url_for('blog.experience') }}">Experience</a>
+						<a href="{{ url_for('blog.projects') }}">Projects</a>
+						<a href="{{ url_for('blog.vitriol') }}">95%</a>
+					</div>
+				</div>
+				<div class="nav-right flex horizontal aligncenter gap-m">  
+					<div id="search-container" class="search-container">
+						<form action="{{ url_for('blog.index') }}" method="get" class="search-form">
+							<input type="text" name="q" placeholder="Search..." aria-label="Search">
+						</form>
+					</div>       
+					<button id="theme-toggle" class="ph ph-sun"></button>
+				</div>
+			</div>
+		</nav>
+		<div id="theme-wrapper" class="flex vertical gap-xxs">
+			{% block content %}{% endblock %}
+		</div>
+    </main>
+    <footer class="site-footer">
+		<div class="footer-container">
+			<div class="footer-main">
+			<!-- Logo & Site Info -->
+			<div class="footer-brand">
+				<div class="footer-logo">
+				<a href="{{ url_for('blog.index') }}">
+					<span class="logo-text">caria.io</span>
+				</a>
+				</div>
+				<p class="footer-tagline">Researcher</p>
+				<p class="footer-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</div>
+			
+			<!-- Quick Links -->
+			<div class="footer-links">
+				<h4>Pages</h4>
+				<ul>
+				<li><a href="{{ url_for('blog.index') }}">Home</a></li>
+				<li><a href="{{ url_for('blog.experience') }}">Experience</a></li>
+				<li><a href="{{ url_for('blog.projects') }}">Projects</a></li>
+				<li><a href="{{ url_for('blog.vitriol') }}">95%</a></li>
+				</ul>
+			</div>
+			
+			<!-- Contact Info -->
+			<div class="footer-contact">
+				<h4>Get in touch</h4>
+				<ul>
+					<li>
+						<span class="icon"><i class="ph ph-envelope-simple"></i></span>
+						<a href="mailto:hello@caria.io">hello@caria.io</a>
+					</li>
+					<li>
+						<span class="icon"><i class="ph ph-github-logo"></i></span>
+						<a href="https://github.com/username" target="_blank">GitHub</a>
+					</li>
+					<li>
+						<span class="icon"><i class="ph ph-linkedin-logo"></i></span>
+						<a href="https://linkedin.com/in/username" target="_blank">LinkedIn</a>
+					</li>
+					<li>
+						<span class="icon"><i class="ph ph-twitter-logo"></i></span>
+						<a href="https://twitter.com/username" target="_blank">Twitter</a>
+					</li>
+				</ul>
+			</div>
+			</div>
+			
+			<div class="footer-bottom">
+				<p class="txt-small">&copy; 2025 Federico Caria. All rights reserved.</p>
+				<p class="txt-small">Built with <i class="ph ph-heart" style="color: var(--c-accent);"></i> in San Francisco</p>
+			</div>
+		</div>
+    </footer>
+
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		// Mobile menu toggle functionality
+		const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+		const navLinks = document.getElementById('menu');
+		
+		if (mobileMenuToggle) {
+		mobileMenuToggle.addEventListener('click', function() {
+			// Toggle a class to show/hide the navigation links
+			navLinks.classList.toggle('active');
+			});
+		}
+		
+		// Theme toggle functionality (existing script)
+		const themeToggle = document.getElementById('theme-toggle');
+		const body = document.body;
+		
+		// Initialize the theme from local storage or set to light by default
+		const savedTheme = localStorage.getItem('theme');
+		if (savedTheme) {
+			body.dataset.theme = savedTheme;
+			updateThemeToggleIcon(savedTheme);
+		} else {
+			body.dataset.theme = 'light';
+			updateThemeToggleIcon('light');
+		}
+		
+		themeToggle.addEventListener('click', function() {
+			const currentTheme = body.dataset.theme;
+			const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+			
+			body.dataset.theme = newTheme;
+			localStorage.setItem('theme', newTheme);
+
+			updateThemeToggleIcon(newTheme);
+		});
+		
+		function updateThemeToggleIcon(theme) {
+		if (theme === 'dark') {
+			themeToggle.className = 'ph ph-moon';
+		} else {
+			themeToggle.className = 'ph ph-sun';
+		}
+		}
+	});
+</script>
+
+</body>
+

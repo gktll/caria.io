@@ -1,0 +1,122 @@
+{# templates/blog/post.html #}
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}  {# This keeps any CSS defined in the parent template #}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/post-typography.css') }}">
+{% endblock %}
+
+{% block title %}{{ post.title }} - My Blog{% endblock %}
+
+{% block content %}
+
+
+<header class="flex vertical gap-m">
+    <div class="post-meta flex horizontal gap-s wrap">
+        {% if post.date %}
+        <span class="meta-item">
+            <i class="ph ph-calendar"></i>
+            {{ post.date }}
+        </span>
+        {% endif %}
+        {% if post.author %}
+        <span class="meta-item">
+            <i class="ph ph-user"></i>
+            {{ post.author }}
+        </span>
+        {% endif %}
+    </div>
+    
+    <h1 class="post-title txt-bold">{{ post.title }}</h1>
+        
+    {% if post.summary %}
+    <p class="post-summary" style="max-width: 50rem;">{{ post.summary }}</p>
+    {% endif %}
+
+    {% if post.tags %}
+    <div class="post-tags flex horizontal gap-xs wrap mt-s">
+        {% for tag in post.tags %}
+        <a href="{{ url_for('blog.tag_posts', tag=tag) }}" 
+        class="tag-link" 
+        style="border: 1px solid {{ tag_colors.get(tag, '#CCCCCC') }}; color:{{ tag_colors.get(tag, '#CCCCCC') }} ">
+            {{ tag }}
+        </a>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+</header>
+
+<div class="post-body">
+    {# Table of Contents (if available) #}
+    {% if post.toc %}
+    <aside class="toc-container">
+        <h5>Table of Contents</h5>
+        {{ post.toc|safe }}
+    </aside>
+    {% endif %}
+
+    {# Main Content #}
+    <article class="post-content">
+        {{ post.content|safe }}
+    </article>
+</div>
+
+{# Related Posts #}
+{% if related_posts %}
+<section class="related-posts">
+    <h2>Related Posts</h2>
+    <div class="projects-grid">
+        {% for related in related_posts %}
+        <article class="project-card flex vertical gap-s" style="padding: 1.5rem">
+            <div class="flex vertical gap-s">
+                <span class="post-meta flex horizontal gap-xs aligncenter">
+                    <i class="ph ph-calendar txt-xsmall"></i>
+                    <p class="txt-xsmall">{{ related.date }}</p>
+                </span>
+                <h3>
+                    {% if is_vitriol|default(false) %}
+                        <a class="txt-bold" href="{{ url_for('blog.vitriol_post', slug=related.slug) }}">{{ related.title }}</a>
+                    {% else %}
+                        <a class="txt-bold" href="{{ url_for('blog.post_detail', slug=related.slug) }}">{{ related.title }}</a>
+                    {% endif %}
+                </h3>
+            </div>
+            <div class="post-tags flex horizontal gap-xs wrap">
+                {% for tag in related.tags %}
+                <span id="article-tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% if related.summary %}
+            <p class="summary-text">{{ related.summary }}</p>
+            {% endif %}
+            {% if is_vitriol|default(false) %}
+                <a href="{{ url_for('blog.vitriol_post', slug=related.slug) }}" 
+                class="read-more flex horizontal gap-xs aligncenter">
+                Read More
+                <i class="ph ph-arrow-square-out" style="font-weight:700;"></i>
+                </a>
+            {% else %}
+                <a href="{{ url_for('blog.post_detail', slug=related.slug) }}" 
+                class="read-more flex horizontal gap-xs aligncenter">
+                Read More
+                <i class="ph ph-arrow-square-out" style="font-weight:700;"></i>
+                </a>
+            {% endif %}
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+
+
+{# Post Navigation #}
+<div class="post-footer flex horizontal gap-s">
+    <a href="{{ url_for('blog.index') }}" class="back-link">
+        <i class="ph ph-arrow-left"></i>
+        Back to Posts
+    </a>
+</div>
+{% endblock %}
+

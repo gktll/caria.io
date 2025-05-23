@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Page Not Found - My Blog{% endblock %}
+
+{% block content %}
+<main class="wrapper pd-vertical-m">
+    <div class="error-container">
+        <h1>404 - Page Not Found</h1>
+        <p>The page you're looking for doesn't exist.</p>
+        <a href="{{ url_for('blog.index') }}">Return to Home</a>
+    </div>
+</main>
+{% endblock %}

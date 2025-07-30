@@ -1,20 +1,36 @@
 ---
-title: "What Is Vibe Coding"
+title: "Embracing the Vibe"
 author: "Federico Caria"
 date: "2025-05-21"
 tags: ["coding", "AI", "product"]
 summary: "Vibe coding is an evolution of the relationship between human creativity and computer precision. We’re still in the early days of this paradigm, but it’s unfolding fast."
 ---
 
-###### Introduction
-Imagine building software by simply describing what you want and letting an AI handle the rest. No painstaking syntax, no hours spent debugging missing semicolons—just you, your ideas, and a golem. This is the promise of vibe coding, a buzzworthy *paradigm shift* in 2025 that has developers and tech enthusiasts talking. In vibe coding, you don’t really write code, you co-create it **at the intent level**, using prompts to guide the assistant. The result? Uhm... interesting code that apparently materializes seemingly from the conversation (along with a fair bit of garbage, but that doesn't matter for now). Since if you know how to use it it's like a drug, I thought I'd delve a little deeper into the issue from a theoretical point of view, with an optipessimistic look, trying to delve into the origins of the buzz (how a tongue-in-cheek tweet sparked a movement), and: 
 
-- how vibe coding looks today; 
-- the difference with traditional development;
-- the mindset and tools enabling this new way to build software. 
-- why this matters for uxers.
+
+###### Introduction (translate make it better)
+### 1. Origin Story: From a Tweet to a Movement 
+#### 1.1. Once Upon A Time On February 2025 (shorten a bit)
+#### 1.2. Vibe Coding vs Traditional Development (make a table and state that this is not suppsoed to cover everything)
+## 3. On The Vibe Coding Mindset 
+#### 3.1. Vibe Coding is itchy (draft: devs are afrid and they criticize it but secretly use it? any data on this? list main points of criticism)
+#### 3.2. The sweet spot of Vibe Coding 
+critics tell story of how people vibe coded stuff in production and everything was broken, but they are crazy, that's not vibe coding bad. Others tell story about people just letting the chat do and hoping to get something useful out. They are silly, it's not vibe coding's fault. In essence, vibe coding is just scary for developers that though they skills acquired with much effort and well paid are now in danger. They say manual code is elegant and safe but this is like a photographer that rant because the pictures developer in the chamber are better than digital pictures. This is not how ai works. All this criticism is trash. Vibe coding non puo sostituire al momento un team di developers, soprattuto nel contesto di prodotti complicati. Vibe coding è un tesoro per prototipare, per testare funzionalita, per valutare nuovi business, altro?
+## 4. Embracing the Vibe (and Knowing Its Limits)
+
+
+
+
+
+
+
+
+
+###### Introduction
+ Vibe coding is a buzzworthy *shift* that has developers and tech enthusiasts talking. In pure vibe coding style, one doesn’t really write code but co-create it **at the intent level**, that is using prompts to guide the assistant. Se fino a qualche mese fa eravamo costretti a fare copy/paste di codice tra Claude e VS code, piû di reente, grazie a tools like cursor o claude code, possiamo interagire direttamente nella IDE o attraverso il terminal. L' esperienza diventa seamless di pari passo con l'abilità dell' ai di analizzare il contesto, ed eseguire multipli interventi su una varità di files. Il result? Lines of code that apparently materialize seemingly from the conversation along with a fair bit of garbage da ripulire. Lo scopo del gioco: creatività, abilità nel prompting, e soprattutto chiarezza di idee.
 
 ### 1. Origin Story: From a Tweet to a Movement
+ Fermiamoci un secondo a fare un po' di stroia per coloro che non sono aggiornati. 
 
 #### 1.1. Once Upon A Time On February 2025
 The term “vibe coding” can be traced back to a viral tweet in early February 2025 by renowned AI researcher Andrej Karpathy (former director of AI at Tesla and a co-founder of OpenAI). Karpathy playfully announced he had discovered *a new kind of coding* which he described like this:
@@ -31,20 +47,11 @@ This tweet struck a nerve (and a funny bone) in the developer community. Here wa
 
 And many programmers were intrigued (or alarmed) by this “forget the code, just vibe” philosophy that upends decades of coding practice. In short, Karpathy’s little “just vibe” tweet catalyzed a movement – a shift in thinking about how software can be developed.
 
-#### 1.2. What Is Vibe Coding Exactly?
-So, what does vibe coding actually mean? At its core, vibe coding is programming by conversation and intuition. Instead of writing precise syntax in a programming language, the developer provides intent, context, and even tone through natural-language prompts, and an AI system writes the actual code. In other words, you tell or ask the computer for what you want, rather than explicitly typing out how to do it. One way to define vibe coding is:
 
-- **Building software via AI through intent and dialogue, not direct coding**. You describe the desired features or changes in plain English (just as you might explain it to a colleague), and the AI model generates the corresponding code. You might say, for example, “Create a simple webpage with a header, a navigation menu on the left, and a content area that displays a list of products.” The AI will attempt to produce HTML/CSS/JS code for that layout.
+#### 1.2. Vibe Coding vs Traditional Development
+Vibe coding represents a significant abstraction leap from traditional software development. To appreciate the difference, let’s quickly compare how things work in each approach:
 
-- **Iterative prompting instead of manual debugging**. If the code isn’t quite right or an error occurs, you don’t dive into the code and fix it character by character. Instead, you talk to the AI again: e.g. “The product list isn’t showing images correctly, please fix that.” The AI will adjust the code or suggest a solution. This back-and-forth continues until the software behaves as intended.
-
-- **Context and tone matter**. Because you’re effectively conversing with the AI, the context you provide (prior instructions, project description, etc.) guides it, and even the tone or style of your prompt can influence results. Asking “Could we maybe try a fancier style for the header?” might yield a different aesthetic outcome than a terse “Make the header blue and bold.” You’re steering the AI with the vibe of your instructions, not just the literal content.
-
-Formally, one cybersecurity blog described vibe coding as “a method of developing code with AI where the AI takes instruction, writes code and fixes errors, all with minimal review”. It often involves blindly accepting whatever code the AI writes and suggests, trusting the AI to handle the details. Karpathy’s original definition stresses “forgetting that the code even exists” – you care about the outcome, not the code itself. You might even be speaking commands aloud using speech-to-text, literally coding by chatting instead of typing. Crucially, vibe coding is not just using AI to help you code (which many developers already do with tools like autocomplete or Stack Overflow). It’s a more extreme stance: handing over the keyboard entirely to the AI and operating at a higher level of abstraction. As one article puts it, “you delegate code comprehension entirely to LLMs, accept AI-generated code without reviewing diffs, and troubleshoot by copying error messages directly to the AI”. In vibe coding, the human stops worrying about syntax, boilerplate, and minutiae. Your job is to steer the AI by expressing what you need; the AI’s job is to produce and adjust the code to make it happen.
-
-#### 1.3. Vibe Coding vs Traditional Development
-Vibe coding represents a significant abstraction leap from traditional software development. To appreciate the difference, let’s compare how things work in each approach:
-
+make a table here. 
 - **Level of Abstraction** : In traditional coding, a developer must spell out exact instructions for the computer, using a programming language’s rigid syntax. It’s like speaking to the computer in a very strict formal grammar. In vibe coding, you operate one level higher – you describe what you want, and the AI figures out how to implement it in code. This is analogous to the jump from assembly language to high-level languages, and then from high-level languages to natural language. Each jump made programming more accessible by hiding complexity. Now, with vibe coding, the “language” you code in is effectively English (or any human language) augmented by an AI intermediary.
 
 - **Developer’s Role and Mindset**: Traditionally, developers not only write the code but also constantly think in code – tracking each variable, controlling each logic branch, and manually debugging. With vibe coding, the developer’s mindset shifts to that of a guide or coach for the AI. You focus on defining the problem and desired outcome, and the AI takes care of the low-level implementation. This requires a mindset reset: you must be comfortable relinquishing fine-grained control. Instead of “how do I implement this algorithm?”, you ask “can the AI implement this algorithm for me?” and then curate or nudge the results. It’s a fundamentally different way of thinking about software creation – more about what needs to happen than how it’s done.
@@ -69,7 +76,9 @@ Perhaps the most important shift with vibe coding is adopting a new mental model
 
 This vibe coding mindset is almost like having an extremely capable junior developer or “robot pair programmer” working with you. You express what you want, they do the grunt work and present the result, you then say “hmm, not quite, tweak this,” and repeat. It relies on intuition and experimentation. If something isn’t working, one might not even dig into the code logic herself; instead one’ll try rephrasing the request or asking the AI to attempt a different approach. Karpathy described this experience as “I just see stuff, say stuff, run stuff, and copy-paste stuff” – a highly improvisational flow. 
 
-One striking aspect of this mindset is the lack of fear of breaking things (that's funny!). Since you can always ask the AI to fix issues, vibe coders tend to be bold in trying changes. Error message pops up? Just feed it back to the AI and see if it can fix the bug automatically. Not happy with the implementation? Ask the AI for an alternative. It’s a very fluid, interactive process, quite unlike the static cycle of write→compile→debug that many of us learned as beginners. In vibe coding, conversation is the new compilation step. It’s important to note that adopting the vibe coding mindset doesn’t mean turning off your brain or giving up on logic. It means your mental energy is redirected: you think about what the software should do, test the software’s behavior, and strategize what to ask the AI to do next. You still need to have a sense of whether the AI’s output is on track. If anything, you become a tester and architect, while the AI acts as the coder/implementer. When done well, vibe coding feels like creative collaboration – you and the AI riff off each other, gradually refining a program from a rough idea to a polished product.
+One striking aspect of this mindset is the lack of fear of breaking things (that's funny!). Since you can always ask the AI to fix issues, vibe coders tend to be bold in trying changes. Error message pops up? Just feed it back to the AI and see if it can fix the bug automatically. Not happy with the implementation? Ask the AI for an alternative. It’s a very fluid, interactive process, quite unlike the static cycle of write→compile→debug that many of us learned as beginners. In vibe coding, conversation is the new compilation step. 
+
+It’s important to note that adopting the vibe coding mindset doesn’t mean turning off your brain or giving up on logic. It means your mental energy is redirected: you think about what the software should do, test the software’s behavior, and strategize what to ask the AI to do next. You still need to have a sense of whether the AI’s output is on track. If anything, you become a tester and architect, while the AI acts as the coder/implementer. When done well, vibe coding feels like creative collaboration – you and the AI riff off each other, gradually refining a program from a rough idea to a polished product.
 
 
 ## 3. On The Vibe Coding Mindset

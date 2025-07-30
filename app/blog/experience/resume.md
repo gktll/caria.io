@@ -3,7 +3,7 @@ title: "Resume"
 author: "Federico Caria"
 date: "2025-02-10"
 tags: ["research", "usability", "User Experience", "Automation"]
-summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim nibh, maximus vitae commodo vitae, fringilla eget purus. Suspendisse pharetra lacus vel volutpat dapibus. Fusce et placerat tellus. Praesent tincidunt elit vel tortor blandit ornare. Vestibulum id maximus lorem."
+summary: "I operate where behavioral science meets software development, with programming expertise that lets me turn research insights into functional solutions. From academic research platforms to ecommerce optimization, I understand both what users need and how to build it."
 ---
 
 ### 01. Professional Experience
@@ -185,7 +185,7 @@ summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim ni
 <div class="cv-section list flex vertical gap-m">
   <div class="cv-item flex vertical gap-s py-l">
     <h4 class="cv-title txt-bold">Annotation in Digital Humanities</h4>
-    <div class="italic">Caria, Federico, and Brigitte Mathiak</div>
+    <div class="italic">Caria Federico, Brigitte Mathiak</div>
     <div class="cv-details">
       In <span class="italic">Digital Cultural Heritage</span>, edited by Horst Kremers, 39-50. Cham: Springer International, 2020.
     </div>
@@ -202,7 +202,7 @@ summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim ni
   
   <div class="cv-item flex vertical gap-s py-l">
     <h4 class="cv-title txt-bold">A Hybrid Focus Group for the Evaluation of Digital Scholarly Editions of Literary Authors</h4>
-    <div class="italic">Caria, Federico, and Brigitte Mathiak</div>
+    <div class="italic">Caria Federico, Brigitte Mathiak</div>
     <div class="cv-details">
       In <span class="italic">Digital Scholarly Editions as Interfaces Symposium</span>, Graz, 23.-24. September 2016: abstracts, Schriftenreihe des IDE 12, 2018.
     </div>
@@ -216,7 +216,7 @@ summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim ni
   
   <div class="cv-item flex vertical gap-s py-l">
     <h4 class="cv-title txt-bold">Minimal Functionality for Digital Scholarly Editions</h4>
-    <div class="italic">Caria, Federico, and Brigitte Mathiak</div>
+    <div class="italic">Caria Federico, Brigitte Mathiak</div>
     <div class="cv-details">
       In <span class="italic">Digital Cultural Heritage: Final Conference of the Marie Sklodowska-Curie Initial Training Network for Digital Cultural Heritage, ITN-DCH 2017</span>, Olimje, Slovenia, May 23--25, 2017, Revised Selected Papers, edited by Marinos Ioannides, Lecture Notes in Computer Science, 350-363. Cham: Springer International Publishing, 2018.
     </div>
